@@ -1,7 +1,9 @@
 /**
 * Generic Helpers Module
 * @module helpers
+* @global
 */
+
 let getTransformValue = function(style) {
 	return style['-webkit-transform']
 	|| 	style['webkit-transform'] 
@@ -27,6 +29,7 @@ module.exports = {
 	* Retrieves a browser specific transform property
 	* @memberOf module:helpers#
 	* @param {array} style
+	* @function
 	*/
 	getTransformValue: getTransformValue,
 	/**
@@ -34,6 +37,7 @@ module.exports = {
 	* @memberOf module:helpers#
 	* @param {array} style
 	* @param {string} value
+	* @function
 	*/
 	setTransformValue: setTransformValue
 }
