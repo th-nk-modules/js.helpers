@@ -13,11 +13,27 @@ let getTransformValue = function(style) {
 	|| 	style.mozTransform;
 }
 
+
+let setTransformValue = function(style, value) {
+ 	style.webkitTransform = value;
+    style.MozTransform = value;
+    style.msTransform = value;
+    style.OTransform = value;
+    style.transform = value;
+}
+
 module.exports = {
 	/**
 	* Retrieves a browser specific transform property
 	* @memberOf module:helpers#
 	* @param {array} style
 	*/
-	getTransformValue: getTransformValue
+	getTransformValue: getTransformValue,
+	/**
+	* Sets a browser specific transform property
+	* @memberOf module:helpers#
+	* @param {array} style
+	* @param {string} value
+	*/
+	setTransformValue: setTransformValue
 }
