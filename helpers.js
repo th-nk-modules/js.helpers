@@ -24,7 +24,23 @@ let setTransformValue = function(style, value) {
     style.transform = value;
 }
 
+
+let getTransitionDuration = function(style) {
+ 	var time = style['-webkit-transition-duration']
+    || style['transition-duration'];
+
+	return parseFloat(time.split('s')[0]) * 1000;
+    
+}
+
+
 module.exports = {
+	/**
+	* Retrieves a browser specific transition duration property in ms
+	* @memberOf module:helpers#
+	* @param {array} style
+	*/
+	getTransitionDuration: getTransitionDuration,
 	/**
 	* Retrieves a browser specific transform property
 	* @memberOf module:helpers#
